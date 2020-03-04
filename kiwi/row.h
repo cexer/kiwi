@@ -22,7 +22,7 @@ class Row
 
 public:
 
-	typedef MapType<Symbol, double> CellMap;
+	typedef _KIWI_MAP_TYPE<Symbol, double> CellMap;
 
 	Row() : m_constant( 0.0 ) {}
 

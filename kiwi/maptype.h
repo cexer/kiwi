@@ -19,12 +19,21 @@ namespace kiwi
 namespace impl
 {
 
+
+#if defined(_KIWI_HAS_CPP11)
 template<
 	typename K,
 	typename V,
 	typename C = std::less<K>,
 	typename A = std::allocator< std::pair<K, V> > >
-using MapType = Loki::AssocVector<K, V, C, A>;
+using _KIWI_MAP_TYPE = Loki::AssocVector<K, V, C, A>;
+
+#else
+
+#define _KIWI_MAP_TYPE Loki::AssocVector
+
+#endif
+
 
 // template<
 // 	typename K,

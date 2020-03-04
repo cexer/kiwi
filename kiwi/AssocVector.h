@@ -23,6 +23,7 @@
 #include <functional>
 #include <vector>
 #include <utility>
+#include "./cpp11.h"
 
 namespace Loki
 {
@@ -109,7 +110,7 @@ namespace Loki
         typedef typename Base::const_reverse_iterator const_reverse_iterator;
 
         class value_compare
-            : public std::function<bool(value_type, value_type)>
+            : public _KIWI_FUNCTION<bool(value_type, value_type)>
             , private key_compare
         {
             friend class AssocVector;

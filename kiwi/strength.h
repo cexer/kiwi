@@ -7,7 +7,7 @@
 |----------------------------------------------------------------------------*/
 #pragma once
 #include <algorithm>
-
+#include "./cpp11.h"
 
 namespace kiwi
 {

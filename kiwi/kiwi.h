@@ -6,6 +6,7 @@
 | The full license is in the file COPYING.txt, distributed with this software.
 |----------------------------------------------------------------------------*/
 #pragma once
+#include "cpp11.h"
 #include "constraint.h"
 #include "debug.h"
 #include "errors.h"

@@ -6,7 +6,6 @@
 | The full license is in the file COPYING.txt, distributed with this software.
 |----------------------------------------------------------------------------*/
 #pragma once
-#include <memory>
 #include <string>
 #include "shareddata.h"
 
@@ -100,7 +99,7 @@ private:
 		~VariableData() {}
 
 		std::string m_name;
-		std::unique_ptr<Context> m_context;
+		_KIWI_UNIQUE_PTR<Context> m_context;
 		double m_value;
 
 	private:
