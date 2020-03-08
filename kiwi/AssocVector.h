@@ -23,7 +23,6 @@
 #include <functional>
 #include <vector>
 #include <utility>
-#include "./cpp11.h"
 
 namespace Loki
 {
