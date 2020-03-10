@@ -1,3 +1,7 @@
+#ifndef __KIWI_CPP11_H__
+#define __KIWI_CPP11_H__
+
+
 // you can use https://github.com/cexer/zboost it you don't want the real huge boost
 // https://github.com/cexer/kiwi
 
@@ -20,3 +24,29 @@
     #define _KIWI_FUNCTION   std::function
     #define _KIWI_BIND       std::bind
 #endif
+
+namespace kiwi
+{
+
+template<class T>
+class ValidCheckable
+{
+    typedef void (ValidCheckable::*_SafeBoolType)();
+    void _safeTrue(){};
+
+protected:
+    ValidCheckable(){}
+public:
+    operator _SafeBoolType() const
+    {
+        return static_cast<const T*>(this)->isValid()
+            ? &ValidCheckable::_safeTrue
+            : 0;
+    }
+};
+
+};
+
+
+
+#endif //#ifndef __KIWI_CPP11_H__

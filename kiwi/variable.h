@@ -14,8 +14,8 @@ namespace kiwi
 {
 
 class Variable
+    : public ValidCheckable<Variable>
 {
-
 public:
 
 	class Context
@@ -25,13 +25,16 @@ public:
 		virtual ~Context() {}  // LCOV_EXCL_LINE
 	};
 
-	Variable( Context* context = 0 ) :
+    Variable() :
+		m_data( NULL ) {}
+
+	Variable( Context* context ) :
 		m_data( new VariableData( "", context ) ) {}
 
 	Variable( const std::string& name, Context* context = 0 ) :
 		m_data( new VariableData( name, context ) ) {}
 
-	Variable( const char* name, Context* context = 0 ) :
+	Variable( const char* name, Context* context ) :
 		m_data( new VariableData( name, context ) ) {}
 
 	~Variable() {}
@@ -40,6 +43,11 @@ public:
 	{
 		return m_data->m_name;
 	}
+
+    bool isValid() const
+    {
+        return !!m_data;
+    }
 
 	void setName( const char* name )
 	{
