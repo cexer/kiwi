@@ -109,8 +109,7 @@ namespace Loki
         typedef typename Base::const_reverse_iterator const_reverse_iterator;
 
         class value_compare
-            : public _KIWI_FUNCTION<bool(value_type, value_type)>
-            , private key_compare
+            : private key_compare
         {
             friend class AssocVector;
 
