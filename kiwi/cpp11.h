@@ -2,7 +2,6 @@
 #define __KIWI_CPP11_H__
 
 
-// you can use https://github.com/cexer/zboost it you don't want the real huge boost
 // https://github.com/cexer/kiwi
 
 #if __cplusplus <= 199711L && \
